@@ -358,5 +358,37 @@ class Queue //
                 }
             }
         };
-        
+        void mostrarListaTotal() // Muestra la lista total
+        {
+            Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+            for (int i = 1; i <= size; i++) // Recorre la lista
+            {
+                cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
+                cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
+                aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+            }
+        };
+        void mostrarListaPorRelevancia() // Muestra la lista por relevancia
+        {
+            Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+            for (int i = 1; i <= size; i++) // Recorre la lista
+            {
+                cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
+                cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
+                aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+            }
+        };
+        void mostrarListaPorAlmenosUnaPalabraProporcionadaPorElUsuario(string palabra) // Muestra la lista por almenos una palabra proporcionada por el usuario
+        {
+            Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+            for (int i = 1; i <= size; i++) // Recorre la lista
+            {
+                if (aux->titular.find(palabra) != string::npos) // Si el titular del nodo auxiliar contiene la palabra indicada
+                {
+                    cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
+                    cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
+                }
+                aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+            }
+        };
 };
