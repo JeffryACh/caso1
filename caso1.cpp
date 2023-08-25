@@ -3,7 +3,7 @@
     *
     * Created on: 21/08/2023 11:45
     * 
-    * Last modified on: 22/08/2023 10:05 
+    * Last modified on: 25/08/2023 12:40 
     * 
     * Author: Jeffry Alberto Araya Chaves.
 */
@@ -90,6 +90,7 @@ using namespace std; // Para no tener que escribir std::cout o std::cin
 
 struct Node // Estructura de un nodo
 {
+    // Atributos públicos
     int relevancia; // Relevancia del titular
     string titular; // Titular de la noticia
     Node *next; // Puntero al siguiente nodo
@@ -98,6 +99,7 @@ struct Node // Estructura de un nodo
 
 class Queue // 
 {
+    // Atributos privados
     private:
         Node *head; // Puntero al primer nodo
         Node *tail; // Puntero al último nodo
@@ -117,6 +119,8 @@ class Queue //
         }
 
         // Métodos
+
+        // Getters
         void insertarAlInicio(int relevancia, string titular) // Inserta un nodo al inicio de la lista
         {
             Node *newNode = new Node(); // Crea un nuevo nodo
@@ -192,6 +196,8 @@ class Queue //
                 cout << "La posicion no es valida" << endl; // Imprime un mensaje de error
             }
         };
+
+        // Deleters
         void eliminarAlInicio() // Elimina un nodo al inicio de la lista
         {
             if (head == NULL) // Si el puntero al primer nodo es NULL
@@ -271,6 +277,8 @@ class Queue //
                 aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
             }
         };
+
+        // Searchers
         void buscarPorPosicion(int posicion) // Busca un nodo por posición de la lista
         {
             if (posicion > 0 && posicion <= size) // Si la posición es mayor a 0 y menor o igual al tamaño de la lista
@@ -302,6 +310,8 @@ class Queue //
                 aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
             }
         };
+
+        // Setters
         void modificarPorPosicion(int posicion, int relevancia, string titular) // Modifica un nodo por posición de la lista
         {
             if (posicion > 0 && posicion <= size) // Si la posición es mayor a 0 y menor o igual al tamaño de la lista
@@ -358,6 +368,8 @@ class Queue //
                 }
             }
         };
+
+        // Showers
         void mostrarListaTotal() // Muestra la lista total
         {
             Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
@@ -372,6 +384,16 @@ class Queue //
         {
             Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
             for (int i = 1; i <= size; i++) // Recorre la lista
+            {
+                cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
+                cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
+                aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+            }
+        };
+        void mostrarTop5Noticias() // Muestra los 5 titulares con más relevancia
+        {
+            Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+            for (int i = 1; i <= 5; i++) // Recorre la lista
             {
                 cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
                 cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
