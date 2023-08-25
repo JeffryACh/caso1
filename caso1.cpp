@@ -97,7 +97,7 @@ struct Node // Estructura de un nodo
     Node *prev; // Puntero al nodo anterior
 };
 
-class Queue // 
+class Queue // Clase de la lista doblemente enlazada circular 
 {
     // Atributos privados
     private:
@@ -118,8 +118,7 @@ class Queue //
             delete tail; // Elimina el puntero al último nodo
         }
 
-        // Métodos
-
+        // Métodos públicos
         // Getters
         void insertarAlInicio(int relevancia, string titular) // Inserta un nodo al inicio de la lista
         {
