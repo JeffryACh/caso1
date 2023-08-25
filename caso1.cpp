@@ -1,5 +1,5 @@
 /*
-    * caso1.h
+    * caso1.cpp
     *
     * Created on: 21/08/2023 11:45
     * 
@@ -28,8 +28,8 @@
 /*
     Preliminar #1:
     1) Determine que tipo de lista va a requerir para implementar el programa, ya sea lista simple, doblemente enlazada, circular, o doblemente enlazada circular
-    2) Determine cuáles métodos del TAD lista seleccionado necesita tener implementados y escribalos en un archivo .h, no hace falta que tengan body, pero si agregue comentarios indicando lo que supuestamente haría el método
-    3) Determine que métodos de operación para agregar, buscar, eliminar y reordenar titulares se van a necesitar y a cuáles métodos de la lista seleccionada va a ser necesario llamarlos, escriba esos métodos en un archivo .h, no hace falta que tengan body, pero si agregue comentarios indicando lo que supuestamente haría el método
+    2) Determine cuáles métodos del TAD lista seleccionado necesita tener implementados y escribalos en un archivo .cpp, no hace falta que tengan body, pero si agregue comentarios indicando lo que supuestamente haría el método
+    3) Determine que métodos de operación para agregar, buscar, eliminar y reordenar titulares se van a necesitar y a cuáles métodos de la lista seleccionada va a ser necesario llamarlos, escriba esos métodos en un archivo .cpp, no hace falta que tengan body, pero si agregue comentarios indicando lo que supuestamente haría el método
     4) Deberá enviar esto listo al profesor vía discord, usando un mensaje directo, a más tardar a las 10pm, indique su nombre completo y el link de github donde hizo commit del código
 */
 
@@ -60,7 +60,7 @@
     * 13) Mostrar lista por almenos una palabra proporcionada por el usuario
 */
 
-// Preliminar #1 c) Determine que métodos de operación para agregar, buscar, eliminar y reordenar titulares se van a necesitar y a cuáles métodos de la lista seleccionada va a ser necesario llamarlos, escriba esos métodos en un archivo .h, no hace falta que tengan body, pero si agregue comentarios indicando lo que supuestamente haría el método
+// Preliminar #1 c) Determine que métodos de operación para agregar, buscar, eliminar y reordenar titulares se van a necesitar y a cuáles métodos de la lista seleccionada va a ser necesario llamarlos, escriba esos métodos en un archivo .cpp, no hace falta que tengan body, pero si agregue comentarios indicando lo que supuestamente haría el método
 /*
     * Métodos:
     * 1) Agregar titular
