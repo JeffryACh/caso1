@@ -97,7 +97,7 @@ struct Node // Estructura de un nodo
     Node *prev; // Puntero al nodo anterior
 };
 
-class Queue // Clase de la lista doblemente enlazada circular 
+class Noticias // Clase de la lista doblemente enlazada circular 
 {
     // Atributos privados
     private:
@@ -389,16 +389,7 @@ class Queue // Clase de la lista doblemente enlazada circular
                 aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
             }
         };
-        void mostrarTop5Noticias() // Muestra los 5 titulares con más relevancia
-        {
-            Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
-            for (int i = 1; i <= 5; i++) // Recorre la lista
-            {
-                cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
-                cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
-                aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
-            }
-        };
+        void mostrarTop5Noticias(); // Muestra los 5 titulares con más relevancia;
         void mostrarListaPorAlmenosUnaPalabraProporcionadaPorElUsuario(string palabra) // Muestra la lista por almenos una palabra proporcionada por el usuario
         {
             Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
@@ -408,6 +399,36 @@ class Queue // Clase de la lista doblemente enlazada circular
                 {
                     cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
                     cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
+                }
+                aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+            }
+        };
+
+        bool esVacio()
+        {
+            if (head == NULL) // Si el puntero al primer nodo es NULL
+            {
+                return true; // Retorna true
+            }
+            else // Si el puntero al primer nodo no es NULL
+            {
+                return false; // Retorna false
+            }
+        };
+        int length()
+        {
+            return size; // Retorna el tamaño de la lista
+        };
+        void mostrarTitular(string pTitular)
+        {
+            Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+            for (int i = 1; i <= size; i++) // Recorre la lista
+            {
+                if (aux->titular == pTitular) // Si el titular del nodo auxiliar es igual al titular indicado
+                {
+                    cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
+                    cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
+                    break; // Rompe el ciclo
                 }
                 aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
             }
