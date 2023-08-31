@@ -106,13 +106,13 @@ class Noticias // Clase de la lista doblemente enlazada circular
         int size; // Tamaño de la lista
     public:
         // Constructor y destructor
-        Queue()
+        Noticias()
         {
             head = NULL; // Inicializa el puntero al primer nodo en NULL
             tail = NULL; // Inicializa el puntero al último nodo en NULL
             size = 0; // Inicializa el tamaño de la lista en 0
         }
-        ~Queue()
+        ~Noticias()
         {
             delete head; // Elimina el puntero al primer nodo
             delete tail; // Elimina el puntero al último nodo
@@ -164,7 +164,7 @@ class Noticias // Clase de la lista doblemente enlazada circular
             }
             size++; // Incrementa el tamaño de la lista
         };
-        void insertarEnPsosicion(int relevancia, string titular, int posicion) // Inserta un nodo en una posición de la lista
+        void insertarEnPosicion(int relevancia, string titular, int posicion) // Inserta un nodo en una posición de la lista
         {
             if (posicion == 1) // Si la posición es 1
             {
@@ -195,6 +195,15 @@ class Noticias // Clase de la lista doblemente enlazada circular
                 cout << "La posicion no es valida" << endl; // Imprime un mensaje de error
             }
         };
+        string getNoticia(int index)
+        {
+            Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+            for (int i = 0; i < index; i++) // Recorre la lista
+            {
+                aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+            }
+            return aux->titular; // Retorna el titular del nodo auxiliar
+        }
 
         // Deleters
         void eliminarAlInicio() // Elimina un nodo al inicio de la lista
@@ -263,7 +272,7 @@ class Noticias // Clase de la lista doblemente enlazada circular
                 cout << "La posicion no es valida" << endl; // Imprime un mensaje de error
             }
         };
-        void eliminarTitualar(string titular) // Elimina un nodo con un titular de la lista
+        void eliminarTitular(string titular) // Elimina un nodo con un titular de la lista
         {
             Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
             for (int i = 1; i <= size; i++) // Recorre la lista
@@ -389,7 +398,16 @@ class Noticias // Clase de la lista doblemente enlazada circular
                 aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
             }
         };
-        void mostrarTop5Noticias(); // Muestra los 5 titulares con más relevancia;
+        void mostrarTop5Noticias() // Muestra el top 5 de noticias
+        {
+            Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+            for (int i = 0; i < 5; i++) // Recorre la lista
+            {
+                cout << "Relevancia: " << aux->relevancia << endl; // Imprime la relevancia del nodo auxiliar
+                cout << "Titular: " << aux->titular << endl; // Imprime el titular del nodo auxiliar
+                aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+            }
+        };
         void mostrarListaPorAlmenosUnaPalabraProporcionadaPorElUsuario(string palabra) // Muestra la lista por almenos una palabra proporcionada por el usuario
         {
             Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
