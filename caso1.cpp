@@ -376,6 +376,46 @@ class Noticias // Clase de la lista doblemente enlazada circular
                 }
             }
         };
+        void modificarPosicion(string pTitular, int pPosicion) // modifica la posicion del titular, ya sea subiendo
+        {
+            if (pPosicion != 0){
+                if (pPosicion > 0){ // sube la posicion n cantidad de veces
+                    for (int i = 0; i < pPosicion; i++)
+                    {
+                        Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+                        for (int i = 1; i <= size; i++) // Recorre la lista
+                        {
+                            if (aux->titular == pTitular) // Si el titular del nodo auxiliar es igual al titular indicado
+                            {
+                                aux->relevancia -= 1; // Asigna la relevancia al nodo auxiliar
+                                break; // Rompe el ciclo
+                            }
+                            aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+                        }
+                    }
+                }
+                else
+                { // baja la posicion n cantidad de veces
+                    for (int i = 0; i > pPosicion; i--)
+                    {
+                        Node *aux = head; // Crea un nodo auxiliar y lo inicializa con el puntero al primer nodo
+                        for (int i = 1; i <= size; i++) // Recorre la lista
+                        {
+                            if (aux->titular == pTitular) // Si el titular del nodo auxiliar es igual al titular indicado
+                            {
+                                aux->relevancia += 1; // Asigna la relevancia al nodo auxiliar
+                                break; // Rompe el ciclo
+                            }
+                            aux = aux->next; // El puntero al siguiente nodo del nodo auxiliar apunta al siguiente nodo del nodo auxiliar
+                        }
+                    }
+                }
+            }
+            else
+            {
+                cout << "La posicion no es valida" << endl; // Imprime un mensaje de error
+            }
+        };
 
         // Showers
         void mostrarListaTotal() // Muestra la lista total

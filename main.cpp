@@ -122,5 +122,18 @@ int main()
     noticias->buscarPorTitular("Noticia 7");
 
     cout << endl;
+
+    // Modificar posicion
+    noticias->modificarPosicion("Noticia 1", 2);
+
+    noticias->mostrarListaTotal();
+
+    noticias->modificarPosicion("Noticia 1", 1);
+    noticias->modificarPosicion("Noticia 2", -2);
+    noticias->modificarPosicion("Noticia 3", 0);
+    
+    noticias->mostrarListaTotal();
+    cout << endl;
+
     return 0;
 }
